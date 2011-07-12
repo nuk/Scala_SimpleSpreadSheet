@@ -1,0 +1,8 @@
+Simple Spread Sheet
+
+	Consists of a simple excel-like application.
+	
+	- You have a matrix of cells indexed by columns (A to Z) and rows (1 to 100).
+	- Each cell can be a number (Absolute value) or a Formula (related to other cells).
+	- Formulas can be the basic operations (Addition, Subtraction, Division, Multilication).
+	- Formulas can be related to other Formulas
