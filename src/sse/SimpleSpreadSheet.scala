@@ -11,8 +11,12 @@ class SimpleSpreadSheet {
     this
   }
   
-  def getValue (point:(Char,Int)):AnyRef = {
+  def getValue (point:(Char,Int)) = {
     this.cells(point).output
+  }
+  
+  def getIntValue (point:(Char,Int)) = {
+    this.cells(point).output.asInstanceOf[Int]
   }
 }
 
@@ -26,19 +30,19 @@ class AbsoluteCell(var value:Int) extends Cell{
 }
 
 class AddCell(var c1:(Char,Int), var c2:(Char,Int)) extends Cell{
-  def output = (sse.getValue(c1).asInstanceOf[Int]+sse.getValue(c2).asInstanceOf[Int]).asInstanceOf[AnyRef]
+  def output = (sse.getIntValue(c1)+sse.getIntValue(c2)).asInstanceOf[AnyRef]
 }
 
 class SubCell(var c1:(Char,Int), var c2:(Char,Int)) extends Cell{
-	def output = (sse.getValue(c1).asInstanceOf[Int]-sse.getValue(c2).asInstanceOf[Int]).asInstanceOf[AnyRef]
+	def output = (sse.getIntValue(c1)-sse.getIntValue(c2)).asInstanceOf[AnyRef]
 }
 
 class MultCell(var c1:(Char,Int), var c2:(Char,Int)) extends Cell{
-	def output = (sse.getValue(c1).asInstanceOf[Int]*sse.getValue(c2).asInstanceOf[Int]).asInstanceOf[AnyRef]
+	def output = (sse.getIntValue(c1)*sse.getIntValue(c2)).asInstanceOf[AnyRef]
 }
 
 class DivCell(var c1:(Char,Int), var c2:(Char,Int)) extends Cell{
-	def output = (sse.getValue(c1).asInstanceOf[Int]/sse.getValue(c2).asInstanceOf[Int]).asInstanceOf[AnyRef]
+	def output = (sse.getIntValue(c1)/sse.getIntValue(c2)).asInstanceOf[AnyRef]
 }
 
 class RefCell(var ref:(Char,Int)) extends Cell{
