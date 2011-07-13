@@ -6,3 +6,9 @@ Simple Spread Sheet
 	- Each cell can be a number (Absolute value) or a Formula (related to other cells).
 	- Formulas can be the basic operations (Addition, Subtraction, Division, Multilication).
 	- Formulas can be related to other Formulas
+	
+	Now we have four other types of cells
+	
+	- Text Cells
+	- Reference Cells
+	- Merged Cells 
