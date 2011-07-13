@@ -111,5 +111,15 @@ class TestSimpleSpreadSheet{
 	  var sheet = new SimpleSpreadSheet
 	  sheet.setValue(('A',1),new TextCell("hello world"))
 	  assertEquals("hello world",sheet.getValue(('A',1)))
-  }
+	}
+	  
+	//@Test
+	def should_compute_a_formula_with_a_text_cell: Unit ={
+	  var sheet = new SimpleSpreadSheet
+	  sheet.setValue(('A',1),new TextCell("hello world"))
+	  	   .setValue(('B',1),2)
+	  	   .setValue(('C',1),new AddCell(('A',1),('B',1)))
+	  
+	  sheet.getValue(('C',1)) // TODO: Deve lançar um ClassCastException
+	}
 }

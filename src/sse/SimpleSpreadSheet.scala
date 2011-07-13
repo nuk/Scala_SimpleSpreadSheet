@@ -2,7 +2,7 @@ package sse
 import scala.collection.mutable.HashMap
 
 class SimpleSpreadSheet {
-
+  
   var cells = new HashMap[(Char,Int),Cell]
   
   def setValue (point:(Char,Int),value:Cell) = {
